@@ -15,14 +15,14 @@
     "ios": {
       "supportsTablet": true,
       "requireFullScreen": true,
-      "bundleIdentifier": "com.mmestebeld.TheAnyThing"
+      "bundleIdentifier": "com.mmestebeld.theAnyThing"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.mmsherpaan.TheAnyThing"
+      "package": "com.mmsherpaan.theAnyThing"
     },
     "web": {
       "favicon": "./assets/favicon.png"

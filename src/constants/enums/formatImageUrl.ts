@@ -1,18 +1,18 @@
 export enum ImageFormat {
-  HomeHeroHeader = '1125x960',
-  DetailHeader = '1029x690',
-  ProductLaneItem = '256x380',
-  SpotlightLaneItem = '750x1248',
-  MovieGridItem = '384x570',
-  LocationLaneItem = '528x480',
-  TrailerPoster = '686x360',
-  GenrePoster = '135x200',
-  LocationDetailCarouselItem = '670x480',
-  BookingNavigatorPoster = '80x114',
-  TicketPoster = '384x570',
-  LastMinuteItem = '670x260',
-  OrderProductItemOverview = '176x176',
-  OrderProductItemDetail = '750x540',
+  HomeHeroHeader = "1125x960",
+  DetailHeader = "1029x690",
+  ProductLaneItem = "256x380",
+  SpotlightLaneItem = "750x1248",
+  MovieGridItem = "384x570",
+  LocationLaneItem = "528x480",
+  TrailerPoster = "686x360",
+  GenrePoster = "135x200",
+  LocationDetailCarouselItem = "670x480",
+  BookingNavigatorPoster = "80x114",
+  TicketPoster = "384x570",
+  LastMinuteItem = "670x260",
+  OrderProductItemOverview = "176x176",
+  OrderProductItemDetail = "750x540",
 }
 
 export enum ImageRatio {
@@ -34,7 +34,7 @@ export enum ImageRatio {
 
 export default function formatImageUrl(
   url: string,
-  format: ImageFormat,
+  format: ImageFormat
 ): string {
-  return url.replace('[format]', format);
+  return url.replace("[format]", format);
 }
