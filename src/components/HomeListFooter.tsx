@@ -5,12 +5,14 @@ import Button from "./Button";
 const HomeListFooter = () => {
   return (
     <View style={styles.footerContainer}>
-      <Text style={styles.footerText}>LOOKING FOR</Text>
-      <View style={styles.emphasisContainer}>
-        <Text style={styles.footerTextEmphasis}>(</Text>
-        <Text style={styles.footerText}>MORE</Text>
-        <Text style={styles.footerTextEmphasis}>)</Text>
-        <Text style={styles.footerText}> THINGS ?</Text>
+      <View style={styles.topText}>
+        <Text style={styles.footerText}>LOOKING FOR</Text>
+      </View>
+      <View style={styles.bottomText}>
+        <Text style={styles.footerText}>
+          <Text style={styles.footerTextEmphasis}>(</Text>MORE
+          <Text style={styles.footerTextEmphasis}>)</Text> THINGS ?
+        </Text>
       </View>
       <Button text={"SEE ALL MOVIES"} />
     </View>
@@ -21,24 +23,18 @@ export default HomeListFooter;
 
 const styles = StyleSheet.create({
   footerContainer: {
-    width: "100%",
+    width: "80%",
     alignSelf: "center",
     justifyContent: "center",
-    paddingHorizontal: 36,
+    paddingVertical: 40,
     paddingBottom: 400,
-  },
-  emphasisContainer: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "baseline",
-    paddingHorizontal: 20,
-    paddingBottom: 40,
   },
   footerText: {
     color: "#fff",
     fontSize: 40,
     fontFamily: "WorkSans_Bold",
     letterSpacing: -4,
+    lineHeight: 40,
   },
   footerTextEmphasis: {
     color: "#2E31FF",
@@ -46,5 +42,16 @@ const styles = StyleSheet.create({
     fontFamily: "Canopee_Regular",
     textAlign: "center",
     letterSpacing: -4,
+    lineHeight: 40,
+  },
+  bottomText: {
+    marginTop: -10,
+    width: "100%",
+    alignItems: "flex-end",
+    marginBottom: 20,
+  },
+  topText: {
+    width: "100%",
+    alignItems: "flex-start",
   },
 });

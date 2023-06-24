@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import React, { useCallback, useState } from "react";
 import { Video, ResizeMode, VideoFullscreenUpdateEvent } from "expo-av";
 import LinearGradient from "react-native-linear-gradient";
@@ -6,6 +6,7 @@ import { useFocusEffect } from "@react-navigation/native";
 import { TouchableWithoutFeedback } from "react-native";
 import MovieButtonRow from "./MovieButtonRow";
 import * as ScreenOrientation from "expo-screen-orientation";
+import formatImageUrl, { ImageFormat } from "../constants/enums/formatImageUrl";
 
 type TrailerHeaderProps = {
   videoUrl: string;
@@ -13,10 +14,12 @@ type TrailerHeaderProps = {
   language: string;
   genres: string[];
   duration: string;
+  placeholderImage: string;
 };
 
 const TrailerHeader = ({
   videoUrl,
+  placeholderImage,
   title,
   duration,
   language,
@@ -25,6 +28,11 @@ const TrailerHeader = ({
   const video = React.useRef<Video>(null);
   const [playing, setPlaying] = useState(false);
   const [volume, setVolume] = useState(0);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  const image = formatImageUrl(placeholderImage, ImageFormat.DetailHeader);
+
+  console.log(image);
   useFocusEffect(
     useCallback(() => {
       const timeout = setTimeout(() => {
@@ -63,12 +71,20 @@ const TrailerHeader = ({
         source={{
           uri: videoUrl,
         }}
+        onLoad={() => setVideoLoaded(true)}
         resizeMode={ResizeMode.COVER}
         isLooping
         volume={volume}
         shouldPlay={playing}
         onFullscreenUpdate={handleFullscreenUpdate}
       >
+        {!videoLoaded && (
+          <ImageBackground
+            source={{ uri: image }}
+            resizeMode="contain"
+            style={[styles.videoOverlay]}
+          />
+        )}
         <LinearGradient
           style={styles.videoOverlay}
           colors={["#000000aa", "#000"]}

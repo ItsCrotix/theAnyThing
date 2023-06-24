@@ -46,6 +46,7 @@ const MovieScreen = ({ navigation, route }: Props) => {
           duration={metaData!.duration!}
           genres={metaData!.genres?.map((genre) => genre.text)!}
           language={metaData!.originalLanguage!}
+          placeholderImage={metaData!.background?.url!}
         />
         <View style={styles.contentContainer}>
           <Text style={styles.contentText}>{metaData!.content}</Text>

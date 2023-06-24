@@ -49,6 +49,10 @@ const HeroHeader = ({ animatedValue, componentData }: HeroHeaderProps) => {
         style={[styles.backgroundImage, { opacity: headerOpacity }]}
         source={{ uri: imageUri }}
       />
+      <LinearGradient
+        style={styles.bottomGradient}
+        colors={["#00000000", "#000"]}
+      />
       <Animated.View style={{ height: headerHeight }}>
         <LinearGradient
           style={[styles.gradient, { paddingTop: insets.top }]}
@@ -56,10 +60,6 @@ const HeroHeader = ({ animatedValue, componentData }: HeroHeaderProps) => {
         >
           <HeaderBar />
         </LinearGradient>
-        <LinearGradient
-          style={styles.bottomGradient}
-          colors={["#00000000", "#000"]}
-        />
       </Animated.View>
       <Animated.View style={styles.headerTextContainer}>
         <Animated.Text style={[styles.heroText, { opacity: headerOpacity }]}>
