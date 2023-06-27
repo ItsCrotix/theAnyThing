@@ -1,11 +1,8 @@
 import {
   Animated,
-  FlatList,
   ListRenderItem,
   SafeAreaView,
   StyleSheet,
-  Text,
-  View,
 } from "react-native";
 import React, { useCallback, useRef } from "react";
 import HomeSection from "../components/HomeSection";

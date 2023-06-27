@@ -4,11 +4,11 @@ import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { HomeNavigatorParamList } from "../constants/types/Navigation";
 
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import TrailerHeader from "../components/TrailerHeader";
-import TagList from "../components/TagList";
-import HomeSection from "../components/HomeSection";
-import { MovieComponent } from "../constants/types/MovieComponent";
 import Booking from "../components/Booking";
+import HomeSection from "../components/HomeSection";
+import TagList from "../components/TagList";
+import TrailerHeader from "../components/TrailerHeader";
+import { MovieComponent } from "../constants/types/MovieComponent";
 
 type Props = NativeStackScreenProps<HomeNavigatorParamList, "Movie">;
 
@@ -53,6 +53,7 @@ const MovieScreen = ({ navigation, route }: Props) => {
         </View>
         {tagLists.map((tagList) => (
           <TagList
+            key={tagList.id}
             id={tagList.id}
             title={tagList.title!}
             tags={tagList.items!}
@@ -63,7 +64,6 @@ const MovieScreen = ({ navigation, route }: Props) => {
         ))}
         <View style={{ height: 140 }} />
       </ScrollView>
-
       <Booking />
     </View>
   );

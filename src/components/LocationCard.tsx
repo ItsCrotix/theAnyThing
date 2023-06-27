@@ -1,6 +1,6 @@
 import React from "react";
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
-import { VenueLocation, locationList } from "../constants/locations";
+import { VenueLocation } from "../constants/locations";
 import LinearGradient from "react-native-linear-gradient";
 import LocationInfo from "./LocationInfo";
 import Icon from "react-native-vector-icons/FontAwesome";

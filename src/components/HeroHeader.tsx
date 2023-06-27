@@ -1,11 +1,4 @@
-import {
-  Animated,
-  ImageBackground,
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-} from "react-native";
+import { Animated, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { MovieComponent } from "../constants/types/MovieComponent";
@@ -23,10 +16,9 @@ const HEADER_MIN_HEIGHT = 60;
 const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
 
 const HeroHeader = ({ animatedValue, componentData }: HeroHeaderProps) => {
-  if (!componentData) return null;
-
   const insets = useSafeAreaInsets();
 
+  if (!componentData) return null;
   const { image } = componentData;
 
   const headerHeight = animatedValue.interpolate({

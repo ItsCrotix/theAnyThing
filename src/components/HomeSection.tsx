@@ -1,6 +1,6 @@
 // Module imports
-import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { FlatList, ListRenderItem, StyleSheet, View, Text } from "react-native";
+import React, { useCallback, useMemo, useState } from "react";
+import { FlatList, ListRenderItem, StyleSheet, View } from "react-native";
 
 // Component imports
 import MovieCard from "./movieCard";

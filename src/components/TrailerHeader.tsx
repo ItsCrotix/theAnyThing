@@ -1,11 +1,15 @@
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import {
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+  TouchableWithoutFeedback,
+} from "react-native";
 import React, { useCallback, useState } from "react";
 import { Video, ResizeMode, VideoFullscreenUpdateEvent } from "expo-av";
 import LinearGradient from "react-native-linear-gradient";
 import { useFocusEffect } from "@react-navigation/native";
-import { TouchableWithoutFeedback } from "react-native";
 import MovieButtonRow from "./MovieButtonRow";
-import * as ScreenOrientation from "expo-screen-orientation";
 import formatImageUrl, { ImageFormat } from "../constants/enums/formatImageUrl";
 
 type TrailerHeaderProps = {

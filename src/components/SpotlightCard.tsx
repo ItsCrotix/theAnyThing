@@ -1,5 +1,5 @@
-import React, { useCallback, useMemo } from "react";
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import React, { useMemo } from "react";
+import { ImageBackground, StyleSheet, View } from "react-native";
 import { Movie } from "../constants/types/Movie";
 import formatImageUrl, { ImageFormat } from "../constants/enums/formatImageUrl";
 
